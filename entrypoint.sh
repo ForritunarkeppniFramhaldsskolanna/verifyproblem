@@ -1,10 +1,7 @@
 #!/bin/bash -l
 
-pwd
-ls -al
 cd $GITHUB_WORKSPACE
-pwd
-ls -al
+cd problems
 for problem in *; do
     if [[ -d $problem ]]; then
         if [ ! verifyproblem $1 ] ; then
