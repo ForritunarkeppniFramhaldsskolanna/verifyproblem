@@ -1,0 +1,5 @@
+# action.yaml
+description: 'Greet someone and record the time'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
