@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
-cd problems
+ls -al
+#cd $GITHUB_WORKSPACE/problems
 for problem in *; do
     if [[ -d $problem ]]; then
         if [ ! verifyproblem $1 ] ; then
