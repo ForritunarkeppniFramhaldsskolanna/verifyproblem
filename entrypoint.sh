@@ -1,10 +1,11 @@
 #!/bin/bash -l
 set -e
+GITHUB_WORKSPACE=/home/tagl/FK2022
 cd $GITHUB_WORKSPACE
 cd problems
-git diff --name-only HEAD^ HEAD > _changed_files
-grep "^problems/" _changed_files | awk -F/ '{ print $2 }' | sort -u > _changed_problems
-for problem in $(cat _changed_problems); do
+if [ -z ${CHANGED_PROBLEMS+x} ]; then PROBLEMS=*; else PROBLEMS=$CHANGED_PROBLEMS; fi
+echo $PROBLEMS
+for problem in $PROBLEMS; do
     if [[ -d $problem ]]; then
         verifyproblem $problem 2>&1 | tee output
         if [ ! -z "$(grep '^ERROR' output)" ] ; then
