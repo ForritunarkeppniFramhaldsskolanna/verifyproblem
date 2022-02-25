@@ -1,6 +1,5 @@
 #!/bin/bash -l
 set -e
-GITHUB_WORKSPACE=/home/tagl/FK2022
 cd $GITHUB_WORKSPACE
 cd problems
 if [ -z ${CHANGED_PROBLEMS+x} ]; then PROBLEMS=*; else PROBLEMS=$CHANGED_PROBLEMS; fi
