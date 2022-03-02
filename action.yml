@@ -1,5 +1,5 @@
 # action.yaml
-description: 'Greet someone and record the time'
+description: 'Run verifyproblem and problem2pdf'
 runs:
   using: 'docker'
   image: 'Dockerfile'
