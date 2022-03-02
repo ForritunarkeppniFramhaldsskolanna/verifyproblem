@@ -12,7 +12,6 @@ for problem in $(cat ../CHANGED_PROBLEMS); do
         done < <(grep '^ERROR' output)
         while read -r line ; do
             echo "::warning title=Warning while verifying problem $problem::$line"
-            result=1
         done < <(grep '^WARNING' output)
         rm output
         if ! problem2pdf $problem ; then
