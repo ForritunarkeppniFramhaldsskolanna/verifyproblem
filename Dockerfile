@@ -12,6 +12,7 @@ RUN apt-get update && \
             libgmp10 \
             libgmpxx4ldbl \
             openjdk-8-jdk \
+            pypy3 \
             python3-minimal \
             python3-pip \
             python3-plastex \
@@ -26,6 +27,7 @@ RUN apt-get update && \
 
 RUN pip3 install git+https://github.com/kattis/problemtools
 
+COPY languages.yaml /usr/local/lib/python3.8/dist-packages/problemtools/config/languages.yaml
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
