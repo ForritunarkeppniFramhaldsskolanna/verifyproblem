@@ -29,5 +29,6 @@ RUN pip3 install git+https://github.com/kattis/problemtools
 
 COPY languages.yaml /usr/local/lib/python3.8/dist-packages/problemtools/config/languages.yaml
 COPY entrypoint.sh /entrypoint.sh
+COPY check_verifyproblem_output.py /check_verifyproblem_output.py
 
 ENTRYPOINT ["/entrypoint.sh"]
