@@ -8,4 +8,4 @@ You can set the environment variable `CHANGED_PROBLEMS` to only verify specific 
 
 ## Example usage
 
-uses: ForritunarkeppniFramhaldsskolanna/verifyproblem@v1
+uses: ForritunarkeppniFramhaldsskolanna/verifyproblem@v3
