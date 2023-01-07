@@ -18,6 +18,8 @@ class SubmissionInfo:
 problemname = sys.argv[1]
 num_groups = int(sys.argv[2]) if len(sys.argv) > 2 else 1
 
+print("problemname: {}".format(problemname))
+
 exit_code = 0
 PATTERN = '^\\s*(P?AC) submission (.*) \\((.*)\\) (.*): (.*) \\((.*)\\) (.*)\n$'
 pointset = set()
@@ -36,7 +38,8 @@ for line in sys.stdin:
     elif line.startswith('WARNING'):
         print("::warning title=Warning while verifying problem {}::{}".format(problemname, line))
 
-
+print("num_groups: {}".format(num_groups))
+print("pointset: {}".format(pointset))
 if 0 not in pointset:
     print("::error title=Missing WA solution::No solution scores 0 points")
     exit_code = 1
