@@ -7,7 +7,7 @@ for problem in $(cat ../CHANGED_PROBLEMS); do
     if [[ -d $problem ]]; then
         verifyproblem $problem 2>&1 | tee output
         groupcount=$(ls -l $problem/data/secret | grep ^d | wc -l)
-        if ! ./check_verifyproblem_output $problem $groupcount ; then
+        if ! ./check_verifyproblem_output.py $problem $groupcount ; then
             result=1
         fi
         rm output
