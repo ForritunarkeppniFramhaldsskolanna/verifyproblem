@@ -5,7 +5,7 @@ cd problems
 result=0
 for problem in $(cat ../CHANGED_PROBLEMS); do
     if [[ -d $problem ]]; then
-        verifyproblem $problem 2>&1 | tee output
+        verifyproblem $problem -l info 2>&1 | tee output
         groupcount=$(ls -l $problem/data/secret | grep ^d | wc -l)
         if ! pypy3 /check_verifyproblem_output.py $problem $groupcount < output; then
             result=1
