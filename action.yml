@@ -2,4 +2,4 @@
 description: 'Run verifyproblem and problem2pdf'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker.io/tagl/verifyproblem:latest'
