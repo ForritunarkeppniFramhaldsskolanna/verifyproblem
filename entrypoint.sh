@@ -11,10 +11,12 @@ for problem in $(cat ../CHANGED_PROBLEMS); do
             result=1
         fi
         rm output
-        if ! problem2pdf $problem ; then
-            echo "::error title=Error generating pdf for problem $problem::"
-            result=1
-        fi
+        for lang in "is" "en"; do
+            if ! problem2pdf $problem -l $lang; then
+                echo "::error title=Error generating pdf for problem $problem::"
+                result=1
+            fi
+        done
     fi
 done
 exit $result
