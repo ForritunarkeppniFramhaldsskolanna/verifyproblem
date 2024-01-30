@@ -48,6 +48,7 @@ for line in sys.stdin:
         pointset.add(0)
     elif line.startswith('ERROR'):
         print("::error title=Error while verifying problem {}::{}".format(problemname, line))
+        exit_code = 1
     elif line.startswith('WARNING'):
         print("::warning title=Warning while verifying problem {}::{}".format(problemname, line))
 
@@ -61,8 +62,6 @@ if not has_wa:
     exit_code = 1
 if not has_tle:
     print("::warning title=Missing TLE solution::No solution gets Time Limit Exceeded verdict")
-if not has_rte:
-    print("::info title=Missing RTE solution::No solution gets Run Time Error verdict")
 
 if len(pointset.difference(set([0]))) < num_groups:
     print("::error title=Missing model solution::At least one test group is missing a model solution")
