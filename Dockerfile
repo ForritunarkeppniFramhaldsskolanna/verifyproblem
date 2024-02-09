@@ -18,6 +18,7 @@ RUN apt-get clean && \
                        python3-yaml \
                        rustc \
                        sudo \
+                       swi-prolog \
                        texlive-fonts-recommended \
                        texlive-lang-cyrillic \
                        texlive-latex-extra \
