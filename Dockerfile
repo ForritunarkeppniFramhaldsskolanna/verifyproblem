@@ -7,10 +7,12 @@ RUN apt-get clean && \
     apt-get install -y automake \
                        g++ \
                        git \
+                       haskell-platform \
                        libboost-all-dev \
                        libgmp-dev \
                        libgmp10 \
                        libgmpxx4ldbl \
+                       openjdk-11-jdk \
                        pypy3 \
                        python3-minimal \
                        python3-pip \
