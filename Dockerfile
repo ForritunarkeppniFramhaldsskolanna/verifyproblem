@@ -30,7 +30,7 @@ RUN apt-get clean && \
                        tidy \
                        vim
 
-RUN pip3 install git+https://github.com/kattis/problemtools
+RUN pip3 install git+https://github.com/tagl/problemtools
 
 COPY languages.yaml /usr/local/lib/python3.10/dist-packages/problemtools/config/languages.yaml
 COPY entrypoint.sh /entrypoint.sh
