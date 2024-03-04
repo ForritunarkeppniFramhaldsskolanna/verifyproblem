@@ -12,6 +12,8 @@ RUN apt-get clean && \
                        libgmp-dev \
                        libgmp10 \
                        libgmpxx4ldbl \
+                       nodejs \
+                       npm \
                        openjdk-11-jdk \
                        pypy3 \
                        python3-minimal \
