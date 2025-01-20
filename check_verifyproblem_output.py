@@ -58,6 +58,7 @@ if last_line.startswith(problemname + " tested: "):
     error_count = int(last_line.split()[2])
     if error_count > 0:
         print("::error title=Error(s) while verifying problem {}::{}".format(problemname, last_line))
+        exit_code = 1
 
 print("num_groups: {}".format(num_groups))
 print("pointset: {}".format(pointset))
