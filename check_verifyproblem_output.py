@@ -28,6 +28,7 @@ has_wa = False
 has_tle = False
 has_rte = False
 
+last_line = ""
 for line in sys.stdin:
     pac_match = pattern.match(line)
     if pac_match:
@@ -51,6 +52,12 @@ for line in sys.stdin:
         exit_code = 1
     elif line.startswith('WARNING'):
         print("::warning title=Warning while verifying problem {}::{}".format(problemname, line))
+    last_line = line
+
+if last_line.startswith(problemname + " tested: "):
+    error_count = int(last_line.split()[2])
+    if error_count > 0:
+        print("::error title=Error(s) while verifying problem {}::{}".format(problemname, last_line))
 
 print("num_groups: {}".format(num_groups))
 print("pointset: {}".format(pointset))
