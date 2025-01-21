@@ -52,7 +52,8 @@ for line in sys.stdin:
         exit_code = 1
     elif line.startswith('WARNING'):
         print("::warning title=Warning while verifying problem {}::{}".format(problemname, line))
-    last_line = line
+    if line:
+        last_line = line
 
 if last_line.startswith(problemname + " tested: "):
     error_count = int(last_line.split()[2])
