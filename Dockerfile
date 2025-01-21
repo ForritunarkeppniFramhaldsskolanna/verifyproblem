@@ -7,7 +7,6 @@ RUN apt-get clean && \
     apt-get install -y automake \
                        g++ \
                        git \
-                       haskell-platform \
                        libboost-all-dev \
                        libgmp-dev \
                        libgmp10 \
@@ -30,7 +29,9 @@ RUN apt-get clean && \
                        tidy \
                        vim
 
-RUN pip3 install git+https://github.com/tagl/problemtools
+RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+RUN pip3 install git+https://github.com/tagl/problemtools --break-system-packages
 
 COPY languages.yaml /usr/local/lib/python3.10/dist-packages/problemtools/config/languages.yaml
 COPY entrypoint.sh /entrypoint.sh
