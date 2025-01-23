@@ -13,7 +13,7 @@ RUN apt-get clean && \
                        libgmpxx4ldbl \
                        nodejs \
                        npm \
-                       openjdk-11-jdk \
+                       openjdk-21-jdk \
                        pypy3 \
                        python3-minimal \
                        python3-pip \
