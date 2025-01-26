@@ -11,6 +11,7 @@ RUN apt-get clean && \
                        libgmp-dev \
                        libgmp10 \
                        libgmpxx4ldbl \
+                       mono-mcs \
                        nodejs \
                        npm \
                        openjdk-21-jdk \

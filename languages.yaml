@@ -140,7 +140,7 @@ haskell:
     name: 'Haskell'
     priority: 600
     files: '*.hs *.c'
-    compile: '/usr/bin/ghc -O2 -ferror-spans -threaded -rtsopts -tmpdir {path} -o {binary} {files}'
+    compile: '/root/.ghcup/bin/ghc -O2 -ferror-spans -threaded -rtsopts -tmpdir {path} -o {binary} {files}'
     run: '{binary} +RTS -M{memlim}m -K8m -RTS'
 
 java:
