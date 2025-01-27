@@ -34,7 +34,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 RUN pip3 install git+https://github.com/tagl/problemtools --break-system-packages
 
-COPY languages.yaml /usr/local/lib/python3.10/dist-packages/problemtools/config/languages.yaml
+COPY languages.yaml /usr/local/lib/python3.12/dist-packages/problemtools/config/languages.yaml
 COPY entrypoint.sh /entrypoint.sh
 COPY check_verifyproblem_output.py /check_verifyproblem_output.py
 
