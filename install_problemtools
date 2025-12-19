@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -e
+
+pushd ~
+git clone https://github.com/Tagl/problemtools
+pushd problemtools
+pushd support
+make
+popd
+python3 -m venv venv
+venv/bin/pip install -r requirements.txt
+
+pushd ~/problemtools/bin
+for f in problem2html.sh problem2pdf.sh verifyproblem.sh; do
+    ln -s "$(pwd)/$f" /usr/bin/${f%.sh}
+done;
+popd
+
+popd
+
+echo "Installation successful!"

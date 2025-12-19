@@ -19,6 +19,7 @@ RUN apt-get clean && \
                        python3-minimal \
                        python3-pip \
                        python3-plastex \
+                       python3-venv \
                        python3-yaml \
                        rustc \
                        sudo \
@@ -32,7 +33,9 @@ RUN apt-get clean && \
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
-RUN pip3 install git+https://github.com/tagl/problemtools --break-system-packages
+COPY install_problemtools /usr/bin/install_problemtools
+
+RUN install_problemtools
 
 COPY languages.yaml /usr/local/lib/python3.12/dist-packages/problemtools/config/languages.yaml
 COPY entrypoint.sh /entrypoint.sh
