@@ -27,6 +27,7 @@ RUN apt-get clean && \
                        texlive-fonts-recommended \
                        texlive-lang-cyrillic \
                        texlive-latex-extra \
+                       texlive-luatex \
                        texlive-plain-generic \
                        tidy \
                        vim
